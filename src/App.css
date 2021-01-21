@@ -236,13 +236,44 @@
     justify-content: center;
     height: 100%;
     align-items: center;
-    padding: 20px;
   }
 
-  .bocaTitle{
+  .bocaTitle {
     font-size: 3em;
   }
-  .riverTitle{
+  .riverTitle {
     font-size: 3em;
+  }
+
+  .bocaApp {
+    width: 350px;
+  }
+
+  .riverApp {
+    width: 350px;
+  }
+
+  .hiddenValue {
+    width: 35px;
+  }
+
+  .showBomb {
+    width: 35px;
+  }
+
+  .riverShowBomb {
+    width: 35px;
+  }
+
+  .showValue {
+    width: 35px;
+  }
+
+  .emptyCell {
+    width: 35px;
+  }
+
+  .riverEmptyCell {
+    width: 35px;
   }
 }
