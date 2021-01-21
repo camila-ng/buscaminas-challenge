@@ -14,11 +14,11 @@ https://tap-challenge.netlify.app/
 ///
 ![river](https://user-images.githubusercontent.com/57297505/105362095-37f89180-5bd9-11eb-9abe-92acd5bb9eb6.png)
 
-
+Mobile
 
 
 ![mobile](https://user-images.githubusercontent.com/57297505/105362092-375ffb00-5bd9-11eb-8683-b86729deec31.png)
-Mobile
+
 
 
 # Getting Started with Create React App
