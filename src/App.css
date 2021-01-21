@@ -8,26 +8,60 @@
   height: 100vh;
   width: 100%;
 }
-.title{
+
+
+.bocaTitle{
   font-family: "Graduate", sans-serif;
   font-size: 5em;
-  animation: color-change 4s infinite;
+  animation: boca-color-change 4s infinite;
   margin-bottom: 30px;
 }
 
-@keyframes color-change {
+.riverTitle{
+  font-family: "Graduate", sans-serif;
+  font-size: 5em;
+  animation: river-color-change 4s infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes boca-color-change {
   0% { color: #004da3; }
   50% { color: #ffde00; }
   100% { color: #004da3; }
 }
 
-.App {
+@keyframes river-color-change {
+  0% { color: #ff0000; }
+  50% { color: #fbd8d8; }
+  100% { color: #ff0000; }
+}
+
+.blockBoard{
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.bocaApp {
   width: 400px;
   height: 400px;
   background-color: #004da3;
   display: flex;
   user-select: none;
 }
+
+.riverApp {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  display: flex;
+  user-select: none;
+  -webkit-box-shadow: -1px 0px 15px -5px #000000; 
+  box-shadow: -1px 0px 15px -5px #000000;}
 
 .showValue {
   width: 40px;
@@ -53,8 +87,23 @@
   -webkit-box-shadow: 0px 2px 2px black;
 }
 
+.riverEmptyCell{
+  background-color: #ff0000;
+  color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 2px black;
+  -moz-box-shadow: 0px 2px 2px black;
+  -webkit-box-shadow: 0px 2px 2px black;
+
+}
 .showBomb {
   background-image: url("./riquelme.png");
+  pointer-events: none;
+
   background-position: center;
   background-size: cover;
   color: transparent;
@@ -68,6 +117,20 @@
   -webkit-box-shadow: 0px 2px 2px black;
 }
 
+.riverShowBomb {
+  background-image: url("https://www.fincacasarejo.com/Docs/Noticias/cuantos_anos_vive_una_gallina.jpg");
+  background-position: center;
+  background-size: cover;
+  color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 2px black;
+  -moz-box-shadow: 0px 2px 2px black;
+  -webkit-box-shadow: 0px 2px 2px black;
+}
 .hiddenValue {
   cursor: pointer;
   color: transparent;
@@ -81,9 +144,9 @@
   -webkit-box-shadow: 0px 2px 2px black;
 }
 
-.reload {
+.bocaReload {
   margin-top: 30px;
-  background-color: #ffde00; /* Green */
+  background-color: #ffde00;
   border: none;
   color: black;
   padding: 15px 32px;
@@ -97,4 +160,60 @@
   font-family: "Graduate", sans-serif;
   cursor: pointer;
   letter-spacing: 5px;
+}
+
+.riverReload {
+  margin-top: 30px;
+  background-color: #ff0000;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  font-family: "Graduate", sans-serif;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+
+.riverChangeButton{
+  margin-top: 30px;
+  background-color: #ff0000; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  font-family: "Graduate", sans-serif;
+  cursor: pointer;
+  letter-spacing: 5px;
+
+}
+
+.bocaChangeButton{
+  margin-top: 30px;
+  background-color: #ffde00; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 6px 4px 5px -4px rgba(0, 0, 0, 0.41);
+  font-family: "Graduate", sans-serif;
+  cursor: pointer;
+  letter-spacing: 5px;
+
 }

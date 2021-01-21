@@ -62,20 +62,23 @@ function App() {
   const initialBoard = newBoard(); // creo un tablero
   const boardWithBombs = placeBombs(initialBoard); // coloco las bombas en el tablero previamente creado
   const [boardTable, setBoardTable] = useState(boardWithBombs);
-
+  const [changeTeam, setChangeTeam] = useState(false)
+  const [blockBoard, setBlockBoard] = useState(false)
   const resetGame = () => {
     setBoardTable(placeBombs(initialBoard));  //Vuelve a crear un tablero nuevo con bombas. 
+    setBlockBoard(false)
   };
 
 
-//Se ejecuta onClick. El primer caso convierte un cero a -1, y devuelve el tablero actualizado con ese nuevo valor. Solo actualiza a -1 el cero que se tocó. Al detectar que se tocó ese valor, envía un alert de "Perdiste".
-//Si tocaste una celda con valor 9, se va a ejecutar la funcion de checkVecinos para poder modificar con el numero de bombas que tenga alrededor esa celda. Como en el caso anterior, también se actualiza el tablero con este nuevo valor, y únicamente en la celda en que se hizo click. 
+  //Se ejecuta onClick. El primer caso convierte un cero a -1, y devuelve el tablero actualizado con ese nuevo valor. Solo actualiza a -1 el cero que se tocó. Al detectar que se tocó ese valor, envía un alert de "Perdiste".
+  //Si tocaste una celda con valor 9, se va a ejecutar la funcion de checkVecinos para poder modificar con el numero de bombas que tenga alrededor esa celda. Como en el caso anterior, también se actualiza el tablero con este nuevo valor, y únicamente en la celda en que se hizo click. 
   const handleCellChange = (x, y) => {
     switch (boardTable[x][y]) {
       case 0:
         boardTable[x][y] = -1; //cambio el cero a -1
         setBoardTable([...boardTable]); //se actualiza el tablero
         alert("PERDISTE");
+        setBlockBoard(true)
         break;
 
       case 9:
@@ -99,11 +102,11 @@ function App() {
         break;
 
       case -2:
-        className = "emptyCell";
+        changeTeam == false ? className = "emptyCell" : className = "riverEmptyCell"
         break;
 
       case -1:
-        className = "showBomb";
+        changeTeam == false ? className = "showBomb" : className = "riverShowBomb"
         break;
 
       default:
@@ -113,10 +116,17 @@ function App() {
     return className;
   };
 
+  const titleClassName = changeTeam ? 'riverTitle' : 'bocaTitle';
+  const boardClassName = changeTeam ? 'riverApp' : 'bocaApp';
+  const reloadClassName = changeTeam ? 'riverReload' : 'bocaReload';
+  const changeTeamButton = changeTeam ? 'riverChangeButton' : 'bocaChangeButton'
+  const blockBoardClassName = blockBoard == true ? 'blockBoard' : ''
   return (
-    <div className="container">
-      <h1 className="title">Buscaromán</h1>
-      <div className="App">
+    <div className='container'>
+      <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'River' : 'Boca'} </button>
+      <h1 className={titleClassName}>{changeTeam ? 'Buscagallinas' : 'Buscaromán'}</h1>
+     <div className={blockBoardClassName}>
+      <div className={boardClassName}>
         {boardTable.map((table, rowIndex) => {
           return (
             <div className="column">
@@ -135,7 +145,8 @@ function App() {
           );
         })}
       </div>
-      <button className="reload" onClick={resetGame}>
+      </div>
+      <button className={reloadClassName} onClick={resetGame}>
         Reiniciar
       </button>
     </div>
