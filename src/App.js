@@ -4,7 +4,7 @@ import React, { useState } from "react";
 //Defino número de filas, columnas y bombas que quiero en mi tablero. (Será de 100 celdas)
 const rows = 10;
 const columns = 10;
-const bombs = 10;
+const bombs = 5;
 
 //Creo el tablero
 const newBoard = () =>
@@ -69,7 +69,7 @@ function App() {
   const resetGame = () => {
     setBoardTable(placeBombs(initialBoard));  //Vuelve a crear un tablero nuevo con bombas. 
     setBlockBoard(false)
-    setAddFlag(false)
+    setAddFlag(!addFlag)
   };
 
   function handleRightClick(x, y) {
@@ -100,8 +100,6 @@ function App() {
         break;
     }
   };
-
-
 
   const getClassName = (cell) => {
     let className = "";
@@ -142,7 +140,9 @@ function App() {
   return (
     <div className='container'>
       <p className="change-team">Cambiar a</p>
-      <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'Boca' : 'River'} </button>
+      <button className={changeTeamButton} onClick={() => {
+          resetGame()
+         setChangeTeam(!changeTeam)}}> {changeTeam ? 'Boca' : 'River'} </button>
       <h1 className={titleClassName}>{changeTeam ? 'Buscagallinas' : 'Buscaromán'}</h1>
       <div className={blockBoardClassName}>
         <div className={boardClassName}>
