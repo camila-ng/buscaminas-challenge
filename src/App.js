@@ -74,7 +74,10 @@ function App() {
 
   function handleRightClick(x, y) {
     window.oncontextmenu = function () {
-      boardTable[x][y] = -3
+      boardTable[x][y] = {
+        value: [0,9,-3,-1],
+        addFlag: true
+      }
       setBoardTable([...boardTable])
       setAddFlag(!addFlag)
     }

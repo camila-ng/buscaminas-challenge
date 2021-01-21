@@ -14,6 +14,7 @@
   font-size: 5em;
   animation: boca-color-change 4s infinite;
   margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .riverTitle {
@@ -21,6 +22,8 @@
   font-size: 5em;
   animation: river-color-change 4s infinite;
   margin-bottom: 30px;
+  margin-top: 5px;
+
 }
 
 @keyframes boca-color-change {
@@ -102,7 +105,8 @@
   background-image:url('./flag.png');
   cursor: pointer;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
   color: transparent;
   width: 40px;
@@ -229,6 +233,7 @@
   font-family: "Graduate", sans-serif;
   letter-spacing: 5px;
   font-size: 16px;
+  margin-top: 50px;
 }
 .bocaChangeButton {
   margin-top: 0px;
