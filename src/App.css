@@ -128,7 +128,7 @@
 }
 
 .riverShowBomb {
-  background-image: url("https://www.fincacasarejo.com/Docs/Noticias/cuantos_anos_vive_una_gallina.jpg");
+  background-image: url('./gallina.jpg');
   background-position: center;
   background-size: cover;
   color: transparent;
