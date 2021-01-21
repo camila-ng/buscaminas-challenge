@@ -239,41 +239,57 @@
   }
 
   .bocaTitle {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   .riverTitle {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 
   .bocaApp {
     width: 350px;
+    height: 350px;
+
   }
 
   .riverApp {
     width: 350px;
+    height: 350px;
+
   }
 
   .hiddenValue {
     width: 35px;
+    height: 35px;
+
   }
 
   .showBomb {
     width: 35px;
+    height: 35px;
+
   }
 
   .riverShowBomb {
     width: 35px;
+    height: 35px;
+
   }
 
   .showValue {
     width: 35px;
+    height: 35px;
+
   }
 
   .emptyCell {
     width: 35px;
+    height: 35px;
+
   }
 
   .riverEmptyCell {
     width: 35px;
+    height: 35px;
+
   }
 }
