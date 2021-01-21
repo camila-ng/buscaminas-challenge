@@ -119,11 +119,13 @@ function App() {
   const titleClassName = changeTeam ? 'riverTitle' : 'bocaTitle';
   const boardClassName = changeTeam ? 'riverApp' : 'bocaApp';
   const reloadClassName = changeTeam ? 'riverReload' : 'bocaReload';
-  const changeTeamButton = changeTeam ? 'riverChangeButton' : 'bocaChangeButton'
+  const changeTeamButton = changeTeam ? 'bocaChangeButton' : 'riverChangeButton'
   const blockBoardClassName = blockBoard === true ? 'blockBoard' : ''
   return (
     <div className='container'>
-      <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'River' : 'Boca'} </button>
+      
+    <p className="change-team">Cambiar a</p>
+      <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'Boca' : 'River'} </button>
       <h1 className={titleClassName}>{changeTeam ? 'Buscagallinas' : 'Buscaromán'}</h1>
      <div className={blockBoardClassName}>
       <div className={boardClassName}>

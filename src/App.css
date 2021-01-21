@@ -45,7 +45,6 @@
   width: 100%;
 }
 
-
 .bocaApp {
   width: 400px;
   height: 400px;
@@ -181,7 +180,7 @@
 }
 
 .riverChangeButton{
-  margin-top: 30px;
+
   background-color: #ff0000; 
   border: none;
   color: black;
@@ -196,11 +195,18 @@
   font-family: "Graduate", sans-serif;
   cursor: pointer;
   letter-spacing: 5px;
+  margin-top: 0px;
 
 }
+.change-team{
+  font-family: "Graduate", sans-serif;
+  letter-spacing: 5px;
+  font-size: 16px;
 
+}
 .bocaChangeButton{
-  margin-top: 30px;
+  margin-top: 0px;
+
   background-color: #ffde00; 
   border: none;
   color: black;
