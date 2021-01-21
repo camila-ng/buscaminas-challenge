@@ -52,8 +52,8 @@ function checkVecinos(board, x, y) {
       }
     }
   }
-  const cantBombs = vecinos.filter((item) => item == 0).length; //filtro las bombas y cuento cuantas hay en el array.
-  if (cantBombs == 0) {
+  const cantBombs = vecinos.filter((item) => item === 0).length; //filtro las bombas y cuento cuantas hay en el array.
+  if (cantBombs === 0) {
     return -2; //retorna -2 si fue tocado y no hay bombas alrededor
   }
   return cantBombs;
@@ -102,11 +102,11 @@ function App() {
         break;
 
       case -2:
-        changeTeam == false ? className = "emptyCell" : className = "riverEmptyCell"
+        changeTeam === false ? className = "emptyCell" : className = "riverEmptyCell"
         break;
 
       case -1:
-        changeTeam == false ? className = "showBomb" : className = "riverShowBomb"
+        changeTeam === false ? className = "showBomb" : className = "riverShowBomb"
         break;
 
       default:
@@ -120,7 +120,7 @@ function App() {
   const boardClassName = changeTeam ? 'riverApp' : 'bocaApp';
   const reloadClassName = changeTeam ? 'riverReload' : 'bocaReload';
   const changeTeamButton = changeTeam ? 'riverChangeButton' : 'bocaChangeButton'
-  const blockBoardClassName = blockBoard == true ? 'blockBoard' : ''
+  const blockBoardClassName = blockBoard === true ? 'blockBoard' : ''
   return (
     <div className='container'>
       <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'River' : 'Boca'} </button>
