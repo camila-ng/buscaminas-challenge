@@ -1,6 +1,10 @@
 https://tap-challenge.netlify.app/
 
 ![buscaminas](https://user-images.githubusercontent.com/57297505/105361555-95401300-5bd8-11eb-851a-06590f7dcb61.png)
+![boca](https://user-images.githubusercontent.com/57297505/105362086-36c76480-5bd9-11eb-9e19-10e78aa3685a.png)
+![buscaminas2](https://user-images.githubusercontent.com/57297505/105362090-375ffb00-5bd9-11eb-9e0b-742e4f17ebaf.png)
+![mobile](https://user-images.githubusercontent.com/57297505/105362092-375ffb00-5bd9-11eb-8683-b86729deec31.png)
+![river](https://user-images.githubusercontent.com/57297505/105362095-37f89180-5bd9-11eb-9abe-92acd5bb9eb6.png)
 
 
 
