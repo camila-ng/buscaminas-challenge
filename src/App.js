@@ -64,11 +64,21 @@ function App() {
   const [boardTable, setBoardTable] = useState(boardWithBombs);
   const [changeTeam, setChangeTeam] = useState(false)
   const [blockBoard, setBlockBoard] = useState(false)
+  const [addFlag, setAddFlag] = useState(false)
+
   const resetGame = () => {
     setBoardTable(placeBombs(initialBoard));  //Vuelve a crear un tablero nuevo con bombas. 
     setBlockBoard(false)
+    setAddFlag(false)
   };
 
+  function handleRightClick(x, y) {
+    window.oncontextmenu = function () {
+      boardTable[x][y] = -3
+      setBoardTable([...boardTable])
+      setAddFlag(!addFlag)
+    }
+  }
 
   //Se ejecuta onClick. El primer caso convierte un cero a -1, y devuelve el tablero actualizado con ese nuevo valor. Solo actualiza a -1 el cero que se tocó. Al detectar que se tocó ese valor, envía un alert de "Perdiste".
   //Si tocaste una celda con valor 9, se va a ejecutar la funcion de checkVecinos para poder modificar con el numero de bombas que tenga alrededor esa celda. Como en el caso anterior, también se actualiza el tablero con este nuevo valor, y únicamente en la celda en que se hizo click. 
@@ -91,14 +101,18 @@ function App() {
     }
   };
 
-  //Defino las clases según el valor de cada celda. Primero aparecen todas ocultas ya que no se modifican los valores hasta que las tocás (todos son ceros y nueves). Entonces se aplica la clase "hiddenValue", luego si tocamos una celda que no tiene ningun valor porque no tiene ninguna bomba alrededor, le aplico la clase "emptyCell". Después, si toco una bomba, se aplica la clase "showBomb" que se da si hay un -1 en la celda. Ese -1 aparece cuando se detecta que hay un cero en la celda. Por último, si no se aplican ninguna de estas variantes, actúa la clase "showValue".
+
 
   const getClassName = (cell) => {
     let className = "";
     switch (cell) {
       case 0:
       case 9:
-        className = "hiddenValue";
+        className = 'hiddenValue'
+        break;
+
+      case -3:
+        className = 'flag'
         break;
 
       case -2:
@@ -108,6 +122,7 @@ function App() {
       case -1:
         changeTeam === false ? className = "showBomb" : className = "riverShowBomb"
         break;
+
 
       default:
         className = "showValue";
@@ -121,32 +136,34 @@ function App() {
   const reloadClassName = changeTeam ? 'riverReload' : 'bocaReload';
   const changeTeamButton = changeTeam ? 'bocaChangeButton' : 'riverChangeButton'
   const blockBoardClassName = blockBoard === true ? 'blockBoard ' : ''
+
+
+
   return (
     <div className='container'>
-      
-    <p className="change-team">Cambiar a</p>
+      <p className="change-team">Cambiar a</p>
       <button className={changeTeamButton} onClick={() => setChangeTeam(!changeTeam)}> {changeTeam ? 'Boca' : 'River'} </button>
       <h1 className={titleClassName}>{changeTeam ? 'Buscagallinas' : 'Buscaromán'}</h1>
-     <div className={blockBoardClassName}>
-      <div className={boardClassName}>
-        {boardTable.map((table, rowIndex) => {
-          return (
-            <div className="column">
-              {table.map((cell, cellIndex) => {
-                return (
-                  <div
-                    onClick={() => handleCellChange(rowIndex, cellIndex)}
-                    className={getClassName(cell)}
-                    key={`${cellIndex};${rowIndex}`}
-                  >
-                    {cell}
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
+      <div className={blockBoardClassName}>
+        <div className={boardClassName}>
+          {boardTable.map((table, rowIndex) => {
+            return (
+              <div className="column">
+                {table.map((cell, cellIndex) => {
+                  return (
+                    <div
+                      onContextMenu={() => handleRightClick(rowIndex, cellIndex)} onClick={() => handleCellChange(rowIndex, cellIndex)}
+                      className={getClassName(cell)}
+                      key={`${cellIndex};${rowIndex}`}
+                    >
+                      {cell}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </div>
       <button className={reloadClassName} onClick={resetGame}>
         Reiniciar
