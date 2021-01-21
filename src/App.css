@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
 
 .container {
   display: flex;
@@ -9,15 +9,14 @@
   width: 100%;
 }
 
-
-.bocaTitle{
+.bocaTitle {
   font-family: "Graduate", sans-serif;
   font-size: 5em;
   animation: boca-color-change 4s infinite;
   margin-bottom: 30px;
 }
 
-.riverTitle{
+.riverTitle {
   font-family: "Graduate", sans-serif;
   font-size: 5em;
   animation: river-color-change 4s infinite;
@@ -25,18 +24,30 @@
 }
 
 @keyframes boca-color-change {
-  0% { color: #004da3; }
-  50% { color: #ffde00; }
-  100% { color: #004da3; }
+  0% {
+    color: #004da3;
+  }
+  50% {
+    color: #ffde00;
+  }
+  100% {
+    color: #004da3;
+  }
 }
 
 @keyframes river-color-change {
-  0% { color: #ff0000; }
-  50% { color: #fbd8d8; }
-  100% { color: #ff0000; }
+  0% {
+    color: #ff0000;
+  }
+  50% {
+    color: #fbd8d8;
+  }
+  100% {
+    color: #ff0000;
+  }
 }
 
-.blockBoard{
+.blockBoard {
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -59,8 +70,9 @@
   background-color: #fff;
   display: flex;
   user-select: none;
-  -webkit-box-shadow: -1px 0px 15px -5px #000000; 
-  box-shadow: -1px 0px 15px -5px #000000;}
+  -webkit-box-shadow: -1px 0px 15px -5px #000000;
+  box-shadow: -1px 0px 15px -5px #000000;
+}
 
 .showValue {
   width: 40px;
@@ -86,7 +98,7 @@
   -webkit-box-shadow: 0px 2px 2px black;
 }
 
-.riverEmptyCell{
+.riverEmptyCell {
   background-color: #ff0000;
   color: transparent;
   width: 40px;
@@ -97,7 +109,6 @@
   box-shadow: 0px 2px 2px black;
   -moz-box-shadow: 0px 2px 2px black;
   -webkit-box-shadow: 0px 2px 2px black;
-
 }
 .showBomb {
   background-image: url("./riquelme.png");
@@ -179,9 +190,8 @@
   letter-spacing: 5px;
 }
 
-.riverChangeButton{
-
-  background-color: #ff0000; 
+.riverChangeButton {
+  background-color: #ff0000;
   border: none;
   color: black;
   padding: 15px 32px;
@@ -196,18 +206,15 @@
   cursor: pointer;
   letter-spacing: 5px;
   margin-top: 0px;
-
 }
-.change-team{
+.change-team {
   font-family: "Graduate", sans-serif;
   letter-spacing: 5px;
   font-size: 16px;
-
 }
-.bocaChangeButton{
+.bocaChangeButton {
   margin-top: 0px;
-
-  background-color: #ffde00; 
+  background-color: #ffde00;
   border: none;
   color: black;
   padding: 15px 32px;
@@ -221,5 +228,21 @@
   font-family: "Graduate", sans-serif;
   cursor: pointer;
   letter-spacing: 5px;
+}
 
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .bocaTitle{
+    font-size: 3em;
+  }
+  .riverTitle{
+    font-size: 3em;
+  }
 }

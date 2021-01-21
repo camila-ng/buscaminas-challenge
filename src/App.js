@@ -120,7 +120,7 @@ function App() {
   const boardClassName = changeTeam ? 'riverApp' : 'bocaApp';
   const reloadClassName = changeTeam ? 'riverReload' : 'bocaReload';
   const changeTeamButton = changeTeam ? 'bocaChangeButton' : 'riverChangeButton'
-  const blockBoardClassName = blockBoard === true ? 'blockBoard' : ''
+  const blockBoardClassName = blockBoard === true ? 'blockBoard ' : ''
   return (
     <div className='container'>
       
