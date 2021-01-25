@@ -23,7 +23,6 @@
   animation: river-color-change 4s infinite;
   margin-bottom: 30px;
   margin-top: 5px;
-
 }
 
 @keyframes boca-color-change {
@@ -101,24 +100,6 @@
   -webkit-box-shadow: 0px 2px 2px black;
 }
 
-.flag{
-  background-image:url('./flag.png');
-  cursor: pointer;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  color: transparent;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 2px 2px black;
-  -moz-box-shadow: 0px 2px 2px black;
-  -webkit-box-shadow: 0px 2px 2px black;
-}
-
 .emptyCell {
   background-color: #ffde00;
   color: transparent;
@@ -174,7 +155,6 @@
   -moz-box-shadow: 0px 2px 2px black;
   -webkit-box-shadow: 0px 2px 2px black;
 }
-
 
 .bocaReload {
   margin-top: 30px;
