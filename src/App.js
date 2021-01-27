@@ -8,10 +8,11 @@ const bombs = 10;
 
 //Creo el tablero
 const newBoard = () =>
-  Array(rows) // array de 5 elementos
+  Array(rows) // array de 10 elementos
     .fill() // se llenan con undefined
     .map(() => Array(columns).fill(9)); // se mapea el primer array y se pushea un segundo array, llenado de 9.
 
+    console.log(newBoard())
 //Para colocar las bombas en el tablero, primero necesito buscar celdas en el tablero de forma aleatorea. Para eso busco coordenadas de ese tablero, representadas con X para las filas e Y para las columnas.
 
 //Numero aleatoreo dentro de un rango (min - max).
